@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {LoginForm} from '../model/login-form';
 import {RegForm} from '../model/reg-form';
+import {JwtInfo} from '../model/jwt-info';
+import {Observable} from 'rxjs';
 
-const URL = 'http://localhost:8080/api/auth/';
+const URL = 'http://localhost:8080/auth/';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -15,11 +17,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(loginForm: LoginForm) {
-    return this.http.post(URL + 'login', loginForm, httpOptions);
+  login(loginForm: LoginForm): Observable<JwtInfo> {
+    return this.http.post<JwtInfo>(URL + 'login', loginForm, httpOptions);
   }
 
   reg(regForm: RegForm) {
-    return this.http.post(URL + 'reg', regForm, httpOptions);
+    console.log(regForm.username + ' ' + regForm.password);
+    return this.http.post<string>(URL + 'reg', regForm, httpOptions);
   }
 }
