@@ -7,17 +7,23 @@ import {httpInterceptorProviders} from './auth/interceptor/auth-interceptor';
 import { LoginComponent } from './auth/form/login/login.component';
 import { RegComponent } from './auth/form/reg/reg.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PizzaListComponent } from './pizza/pizza-list/pizza-list.component';
+import {AppRoutingModule} from './routing/app-routing/app-routing.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegComponent
+    RegComponent,
+    PizzaListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

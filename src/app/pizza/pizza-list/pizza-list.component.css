@@ -1,0 +1,30 @@
+.pizza_list_wrapper {
+  /*display: flex;*/
+  /*align-content: space-between;*/
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.item_template_wrapper {
+  margin: 5px;
+  width: 268px;
+  height: 366px;
+  background-color: rgba(205, 206, 215, 0.95);
+  border-radius: 5px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.item_wrapper {
+  display: grid;
+  justify-content: center;
+}
+img {
+  height: 250px;
+}
+button {
+  font-weight: bold;
+  height: 50px;
+}

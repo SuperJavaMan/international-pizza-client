@@ -1,3 +1,42 @@
-<app-reg></app-reg>
-<p>//////////////////////////////////////////</p>
-<app-login></app-login>
+<div class="wrapper">
+  <header>
+    <div class="header_wrapper">
+      <div class="logo_wrapper">
+        <img [routerLink]="['']" class="logo" src="assets/img/logo_pizza.png">
+        <div class="logo_text">
+          <h3>International Pizza</h3>
+          <h4>The best pizza of the world!</h4>
+        </div>
+      </div>
+      <div class="number_wrapper">
+        <div>UA +3805079824212</div>
+        <div>RU +7803595545454</div>
+        <div>BR +8784545454212</div>
+        <div>FR +4546884544212</div>
+      </div>
+      <div class="nav_wrapper auth_panel" *ngIf="username; else auth_panel">
+        <p>You are in as {{username}}</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main_wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <footer>
+    <div class="footer_wrapper">
+      <p>International Pizza Inc.</p>
+    </div>
+  </footer>
+</div>
+
+<ng-template #auth_panel>
+  <div class="auth_panel">
+    <p>You are not login. Please login or sigh up.</p>
+    <div>
+      <button [routerLink]="['login']">Login</button>
+      <button [routerLink]="['reg']">Sigh Up</button>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,71 @@
+.wrapper {
+width: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: red;
+  height: 100px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: whitesmoke;
+}
+.logo {
+  height: 90px;
+}
+.header_wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 350px 2fr 1fr;
+}
+.logo_wrapper {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+}
+.logo_text {
+  margin-left: 5px;
+}
+.number_wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.auth_panel {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.auth_panel.div {
+  display: grid;
+  align-items: center;
+}
+button {
+  border-radius: 2px;
+  border: 0;
+  width: 70px;
+  height: 20px;
+  margin: 5px;
+  color: red;
+  font-weight: bold;
+  background-color: yellow;
+}
+main {
+  background-image: url(../assets/img/background-pizza.jpg);
+  min-height: calc(100vh - 100px);
+  width: 100%;
+}
+.main_wrapper {
+  /*width: 1200px;*/
+}
+footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+}
+

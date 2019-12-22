@@ -4,6 +4,7 @@ import {TokenStorageService} from '../../service/token-storage.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginForm} from '../../model/login-form';
 import {JwtInfo} from '../../model/jwt-info';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   infoMessage;
   constructor(private authService: AuthService,
-              private tokenStorage: TokenStorageService) { }
+              private tokenStorage: TokenStorageService,
+              private router: Router) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -27,14 +29,12 @@ export class LoginComponent implements OnInit {
   login(data) {
     const loginForm: LoginForm = new LoginForm(data.username, data.password);
     this.authService.login(loginForm).subscribe((response: JwtInfo) => {
-      console.log(response.accessToken);
-      console.log(response.username);
       this.tokenStorage.saveToken(response.accessToken);
       this.tokenStorage.saveUserName(response.username);
       this.tokenStorage.saveAutorities(response.authorities);
-      this.infoMessage = 'You login successfully by name -> ' + this.tokenStorage.getUserName()
-        + '. Token -> ' + this.tokenStorage.getToken();
-    },
+      window.location.reload();
+      },
       error => this.infoMessage = error.error.message);
+    this.router.navigate(['']);
   }
 }

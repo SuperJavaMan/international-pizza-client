@@ -23,6 +23,6 @@ export class AuthService {
 
   reg(regForm: RegForm) {
     console.log(regForm.username + ' ' + regForm.password);
-    return this.http.post<string>(URL + 'reg', regForm, httpOptions);
+    return this.http.post(URL + 'reg', regForm, httpOptions);
   }
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {AuthService} from '../../service/auth.service';
 import {RegForm} from '../../model/reg-form';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-reg',
@@ -11,7 +12,8 @@ import {RegForm} from '../../model/reg-form';
 export class RegComponent implements OnInit {
   form: FormGroup;
   infoMessage;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -22,8 +24,11 @@ export class RegComponent implements OnInit {
 
   reg(data) {
     const regForm: RegForm = new RegForm(data.username, data.password);
+    console.log(regForm.username);
     this.authService.reg(regForm).subscribe(response => {
-        this.infoMessage = 'You sigh up successfully! Please login!';
+      console.log('Response received');
+      this.router.navigate(['login']);
+      this.infoMessage = response;
       },
       error => this.infoMessage = error.error.message);
   }
