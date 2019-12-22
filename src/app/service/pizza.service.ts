@@ -10,6 +10,6 @@ export class PizzaService {
   constructor(private http: HttpClient) { }
 
   getPizzaList() {
-    return this.http.get(URL);
+    return this.http.get(URL + '/all');
   }
 }
