@@ -1,7 +1,7 @@
 <div class="pizza_list_wrapper">
   <div class="item_template_wrapper" *ngFor="let pizza of pizzaList">
     <div class="item_wrapper">
-      <img src="assets/img/pizza_sample.jpg">
+      <img src={{pizza.icon}}>
       <div>
         <h4>{{pizza.name}}</h4>
         <h4>{{pizza.size}}</h4>
