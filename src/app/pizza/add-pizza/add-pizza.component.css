@@ -1,0 +1,34 @@
+.add_pizza_wrapper {
+  padding-top: 40px;
+  width: 100%;
+  height: 86vh;
+}
+form {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+}
+.add_pizza_form_wrapper {
+  display: grid;
+  justify-content: center;
+  font-weight: bold;
+}
+h3 {
+  padding-top: 10px;
+}
+label {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+button {
+  margin-top: 5px;
+  width: 253px;
+  height: 25px;
+  font-weight: bold;
+}
+.infoMessage {
+  color: red;
+  font-weight: bold;
+}

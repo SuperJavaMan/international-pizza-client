@@ -10,13 +10,17 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { PizzaListComponent } from './pizza/pizza-list/pizza-list.component';
 import {AppRoutingModule} from './routing/app-routing/app-routing.module';
 import {RouterModule} from '@angular/router';
+import { AddPizzaComponent } from './pizza/add-pizza/add-pizza.component';
+import { UpdatePizzaComponent } from './pizza/update-pizza/update-pizza.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegComponent,
-    PizzaListComponent
+    PizzaListComponent,
+    AddPizzaComponent,
+    UpdatePizzaComponent
   ],
   imports: [
     BrowserModule,
