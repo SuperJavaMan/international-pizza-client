@@ -11,6 +11,7 @@ import { PizzaListComponent } from './pizza/pizza-list/pizza-list.component';
 import {AppRoutingModule} from './routing/app-routing/app-routing.module';
 import {RouterModule} from '@angular/router';
 import { AddPizzaComponent } from './pizza/add-pizza/add-pizza.component';
+import { UpdatePizzaComponent } from './pizza/update-pizza/update-pizza.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddPizzaComponent } from './pizza/add-pizza/add-pizza.component';
     LoginComponent,
     RegComponent,
     PizzaListComponent,
-    AddPizzaComponent
+    AddPizzaComponent,
+    UpdatePizzaComponent
   ],
   imports: [
     BrowserModule,

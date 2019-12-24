@@ -1,7 +1,7 @@
-<div class="add_pizza_wrapper">
-  <form [formGroup]="form" (ngSubmit)="addPizza(form.value)">
+<div *ngIf="isResponseReceived" class="add_pizza_wrapper">
+  <form [formGroup]="form" (ngSubmit)="updatePizza(form.value)">
     <div class="add_pizza_form_wrapper">
-      <h3>Add new pizza to the store</h3>
+      <h3>Update required fields</h3>
       <label>Pizza name</label>
       <input type="text" name="name" formControlName="name"/>
       <label>Select size</label>
@@ -13,7 +13,9 @@
       </select>
       <label>Pizza price</label>
       <input type="text" name="price" formControlName="price"/>
-      <label>Choose a pizza image</label>
+      <label>Old pizza image</label>
+      <img *ngIf="pizza" src="{{pizza.icon}}">
+      <label>Choose a new pizza image</label>
       <input type="file" (change)="onFileChanged($event)">
       <button type="submit">Submit</button>
       <p class="infoMessage">{{infoMessage}}</p>

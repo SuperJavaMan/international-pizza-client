@@ -7,7 +7,7 @@ form {
   background-color: whitesmoke;
   border-radius: 5px;
   width: 400px;
-  height: 300px;
+  height: 405px;
   margin: 0 auto;
 }
 .add_pizza_form_wrapper {
@@ -31,4 +31,10 @@ button {
 .infoMessage {
   color: red;
   font-weight: bold;
+  margin-top: 5px;
+}
+img {
+  height: 100px;
+  width: 100px;
+  background-color: grey;
 }
