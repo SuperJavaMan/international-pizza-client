@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {PizzaService} from '../../service/pizza.service';
 import {PizzaDTO} from '../model/pizzaDTO';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Pizza} from '../model/pizza';
 
 @Component({
@@ -18,7 +18,8 @@ export class UpdatePizzaComponent implements OnInit {
   infoMessage;
   isResponseReceived;
   constructor(private pizzaService: PizzaService,
-              private activeRoute: ActivatedRoute) { }
+              private activeRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.icon = null;
@@ -41,6 +42,7 @@ export class UpdatePizzaComponent implements OnInit {
     this.pizzaService.updatePizza(this.pizzaId, pizza).subscribe(response => {
         this.infoMessage = 'The pizza updated successfully!';
         this.icon = null;
+        this.router.navigate(['/admin/pizza-list']);
       },
       error => this.infoMessage = error.error.message);
   }

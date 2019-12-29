@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Pizza} from '../../../pizza/model/pizza';
 import {PizzaService} from '../../../service/pizza.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-pizza-list',
@@ -25,5 +26,12 @@ export class AdminPizzaListComponent implements OnInit {
       this.isDataLoaded = false;
       });
   }
-
+  deletePizza(pizza) {
+    const isConfirm = confirm('Are you sure that you want to delete \'' + pizza.name + '\'?');
+    console.log('Are you sure? => ' + isConfirm);
+    if (isConfirm) {
+      this.pizzaService.deletePizza(pizza.id);
+      window.location.reload();
+    }
+  }
 }

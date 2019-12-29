@@ -42,6 +42,6 @@ export class PizzaService {
   }
 
   deletePizza(id: number) {
-    this.http.delete(URL + id);
+    this.http.delete(URL + id).subscribe();
   }
 }
