@@ -13,6 +13,7 @@ import {RouterModule} from '@angular/router';
 import { AddPizzaComponent } from './pizza/add-pizza/add-pizza.component';
 import { UpdatePizzaComponent } from './pizza/update-pizza/update-pizza.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { AdminPizzaListComponent } from './admin/pizza/admin-pizza-list/admin-pizza-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
     PizzaListComponent,
     AddPizzaComponent,
     UpdatePizzaComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    AdminPizzaListComponent
   ],
   imports: [
     BrowserModule,

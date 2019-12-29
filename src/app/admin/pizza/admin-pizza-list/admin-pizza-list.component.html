@@ -1,0 +1,32 @@
+<div class="admin_wrapper">
+  <div class="admin_panel_wrapper">
+    <p class="admin_panel_header">Manage panel</p>
+    <a href="#">Pizza list</a>
+    <a href="#">User list</a>
+  </div>
+  <div class="admin_output_wrapper">
+    <div>
+      <div class="list_header">
+        <p>ID</p>
+        <p>Image</p>
+        <p>Name</p>
+        <p>Size</p>
+        <p>Price</p>
+      </div>
+      <div class="pizza_item_wrapper" *ngFor="let pizza of pizzaList">
+        <div>
+          <p>{{pizza.id}}</p>
+          <img src="{{pizza.icon}}">
+          <p>{{pizza.name}}</p>
+          <p>{{pizza.size}}</p>
+          <p>{{pizza.price}}</p>
+        </div>
+        <nav>
+          <button>Update</button>
+          <button>DisActive</button>
+          <button>Delete</button>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
