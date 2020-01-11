@@ -1,14 +1,8 @@
 <div class="admin_wrapper">
   <div class="admin_table_wrapper">
-    <div class="admin_panel_wrapper">
-      <p class="admin_panel_header">Manage panel</p>
-      <a [routerLink]="['pizza-list']">Pizza list</a>
-      <a href="#">User list</a>
-    </div>
     <div class="admin_output_wrapper">
       <div class="pizza_page">
         <div class="list_header">
-          <p>ID</p>
           <p>Image</p>
           <p>Name</p>
           <p>Size</p>
@@ -16,7 +10,6 @@
         </div>
         <div class="pizza_item_wrapper" *ngFor="let pizza of pizzaList">
           <div class="item">
-            <p>{{pizza.id}}</p>
             <img src="{{pizza.icon}}">
             <p>{{pizza.name}}</p>
             <p>{{pizza.size}}</p>
@@ -25,8 +18,13 @@
           <nav>
             <button class="update_button" [routerLink]="['/update-pizza', pizza.id]">Update</button>
             <button class="disable_button">Disable</button>
-            <button class="delete_button" (click)="deletePizza(pizza)">Delete</button>
+            <button class="delete_button" (click)="deletePizzaFromOrder(pizza)">Delete</button>
           </nav>
+        </div>
+        <div class="submit_wrapper">
+          <div>Total price: {{totalPrice}}</div>
+          <input type="text" [(ngModel)]="order.address"/>
+          <button (click)="approveOrder()">Approve the Order</button>
         </div>
       </div>
     </div>

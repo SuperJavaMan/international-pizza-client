@@ -15,7 +15,15 @@
         <div>FR +4546884544212</div>
       </div>
       <div class="nav_wrapper auth_panel" *ngIf="username; else auth_panel">
-        <p>You are in as {{username}}</p>
+        <div>
+          <p>You are in as {{username}}</p>
+        </div>
+       <div class="user_nav_bar">
+         <div class="basket_wrapper" [routerLink]="['add-order']">
+           <div class="item_counter">{{itemCount}}</div>
+         </div>
+         <button class="admin_button" [routerLink]="['admin']">Admin panel</button>
+       </div>
       </div>
     </div>
   </header>

@@ -5,11 +5,6 @@ export class Order {
   id: number;
   customer: Customer;
   address: string;
-  pizzaList: Pizza[];
+  pizzaList: Pizza[] = [];
 
-  constructor(customer: Customer, address: string) {
-    this.customer = customer;
-    this.address = address;
-    this.pizzaList = [];
-  }
 }
