@@ -4,8 +4,7 @@
   padding-top: 10px;
 }
 .admin_table_wrapper {
-  width: 800px;
-  /*height: 625px;*/
+  width: 690px;
   background-color: whitesmoke;
   margin: 0 auto;
   display: grid;
@@ -44,10 +43,10 @@ img {
   width: 100%;
 }
 .pizza_page {
-  padding-left: 5px;
+  padding-left: 1px;
 }
 .pizza_item_wrapper {
-  width: 670px;
+  width: 680px;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
@@ -84,4 +83,36 @@ button {
 }
 .delete_button {
   background-color: #de2b2b;
+}
+.submit_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  width: 688px;
+  background-color: red;
+  margin-left: 1px;
+  margin-bottom: 1px;
+  color: whitesmoke;
+}
+.address_wrapper {
+  margin-bottom: 5px;
+  width: 200px;
+  margin-left: 5px;
+}
+.total_price {
+  width: 200px;
+  margin-left: 20px;
+}
+.approve_button {
+  background-color: #3341ff;
+  color: whitesmoke;
+  width: 100px;
+  margin-left: 120px;
+}
+h4 {
+ width: 100%;
+  text-align: center;
+  background-color: red;
+  color: whitesmoke;
+  margin: 1px 0 1px 0;
 }

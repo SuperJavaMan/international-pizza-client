@@ -31,12 +31,10 @@ export class OrderService {
 
   deletePizzaFromLocalOrder(pizza: Pizza) {
     const index = this.order.pizzaList.indexOf(pizza);
-    // console.log('Service delete. Index = ' + index);
     if (index >= 0) {
-      console.log('Service delete. Index = ' + index);
       this.order.pizzaList.splice(index, 1);
       this.orderStatus.emit(this.order);
-      this.order.pizzaList.forEach(item => console.log(item.name));
+      // this.order.pizzaList.forEach(item => console.log(item.name));
     }
     return this.order;
   }

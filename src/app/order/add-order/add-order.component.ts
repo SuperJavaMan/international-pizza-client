@@ -14,6 +14,7 @@ export class AddOrderComponent implements OnInit {
   order: Order;
   infoMessage;
   totalPrice = 0;
+  items: Map<Pizza, number> = new Map();
   constructor(private orderService: OrderService,
               private router: Router) { }
 
@@ -24,18 +25,19 @@ export class AddOrderComponent implements OnInit {
     if (typeof this.pizzaList === 'undefined') {
       this.router.navigate(['']);
     }
+    this.countUniqueItems();
     this.calcTotalPrice();
   }
 
   addPizzaToOrder() {
-
+    this.countUniqueItems();
   }
+
   deletePizzaFromOrder(pizza: Pizza) {
-    console.log('Delete pizza method works. Items = ' + this.pizzaList.length);
     this.order = this.orderService.deletePizzaFromLocalOrder(pizza);
     this.pizzaList = this.order.pizzaList;
-    console.log('Delete pizza method after delete. Items = ' + this.pizzaList.length);
     this.calcTotalPrice();
+    this.countUniqueItems();
   }
 
   approveOrder() {
@@ -46,6 +48,18 @@ export class AddOrderComponent implements OnInit {
   }
 
   calcTotalPrice() {
-    this.pizzaList.map(pizza => this.totalPrice + pizza.price);
+    this.totalPrice = this.pizzaList.map(pizza => pizza.price)
+                                    .reduce((price1, price2) => price1 + price2);
+  }
+
+  countUniqueItems() {
+    for (let pizza of this.pizzaList) {
+      if (this.items.has(pizza)) {
+        this.items.set(pizza, this.items.get(pizza) + 1);
+      } else {
+        this.items.set(pizza, 1);
+      }
+    }
+    this.items.forEach((key, value) => console.log(key + ' ' + value.name));
   }
 }

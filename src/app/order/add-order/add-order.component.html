@@ -2,6 +2,7 @@
   <div class="admin_table_wrapper">
     <div class="admin_output_wrapper">
       <div class="pizza_page">
+        <h4>Approve or change your order</h4>
         <div class="list_header">
           <p>Image</p>
           <p>Name</p>
@@ -16,16 +17,17 @@
             <p>{{pizza.price}}</p>
           </div>
           <nav>
-            <button class="update_button" [routerLink]="['/update-pizza', pizza.id]">Update</button>
-            <button class="disable_button">Disable</button>
             <button class="delete_button" (click)="deletePizzaFromOrder(pizza)">Delete</button>
           </nav>
         </div>
-        <div class="submit_wrapper">
-          <div>Total price: {{totalPrice}}</div>
-          <input type="text" [(ngModel)]="order.address"/>
-          <button (click)="approveOrder()">Approve the Order</button>
+      </div>
+      <div class="submit_wrapper">
+        <div class="address_wrapper">
+          <label class="address_label">Input delivery address</label>
+          <input class="address_input" type="text" [(ngModel)]="order.address"/>
         </div>
+        <div class="total_price">Total price: {{totalPrice}}</div>
+        <button class="approve_button" (click)="approveOrder()">Approve the Order</button>
       </div>
     </div>
   </div>
