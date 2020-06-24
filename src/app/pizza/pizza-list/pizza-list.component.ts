@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PizzaService} from '../../service/pizza.service';
+import {OrderService} from "../../service/order.service";
 
 @Component({
   selector: 'app-pizza-list',
@@ -11,7 +12,8 @@ export class PizzaListComponent implements OnInit {
   pizzaList;
   infoMessage;
   isResponseOk;
-  constructor(private pizzaService: PizzaService) { }
+  constructor(private pizzaService: PizzaService,
+              private orderService: OrderService) { }
 
   ngOnInit() {
     this.pizzaService.getPizzaList().subscribe(list => {
@@ -22,5 +24,9 @@ export class PizzaListComponent implements OnInit {
         this.isResponseOk = false;
         this.infoMessage = error.error.message;
       });
+  }
+
+  addPizzaToOrder(pizza) {
+    this.orderService.addPizzaToLocalOrder(pizza);
   }
 }

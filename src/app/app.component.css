@@ -68,4 +68,36 @@ footer {
   color: white;
   font-weight: bold;
 }
-
+.admin_button {
+  width: auto;
+  padding: 2px;
+}
+.basket_wrapper {
+  background-image:  url(../assets/img/basket_icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: yellow;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  float: left;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.user_nav_bar {
+  height: 50px;
+}
+.item_counter {
+  font-size: 25px;
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: rgba(255, 0, 0, 0.82);
+  height: 25px;
+  width: 25px;
+  padding-bottom: 2px;
+  border-radius: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}

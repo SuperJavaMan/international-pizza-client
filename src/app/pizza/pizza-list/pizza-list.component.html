@@ -7,7 +7,7 @@
         <h4>{{pizza.size}}</h4>
         <h3>{{pizza.price}}</h3>
       </div>
-      <button [routerLink]="[]">ORDER</button>
+      <button (click)="addPizzaToOrder(pizza)">ORDER</button>
     </div>
   </div>
 </div>
