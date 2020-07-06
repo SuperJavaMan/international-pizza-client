@@ -1,0 +1,13 @@
+<div class="pizza_list_wrapper">
+  <div class="item_template_wrapper" *ngFor="let pizza of pizzaList">
+    <div class="item_wrapper">
+      <img src={{pizza.icon}}>
+      <div>
+        <h4>{{pizza.name}}</h4>
+        <h4>{{pizza.size}}</h4>
+        <h3>{{pizza.price}}</h3>
+      </div>
+      <button (click)="addPizzaToOrder(pizza)">ORDER</button>
+    </div>
+  </div>
+</div>

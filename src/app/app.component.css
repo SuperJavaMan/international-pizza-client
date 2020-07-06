@@ -1,0 +1,103 @@
+.wrapper {
+width: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: red;
+  height: 100px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: whitesmoke;
+}
+.logo {
+  height: 90px;
+}
+.header_wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 350px 2fr 1fr;
+}
+.logo_wrapper {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+}
+.logo_text {
+  margin-left: 5px;
+}
+.number_wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.auth_panel {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.auth_panel.div {
+  display: grid;
+  align-items: center;
+}
+button {
+  border-radius: 2px;
+  border: 0;
+  width: 70px;
+  height: 20px;
+  margin: 5px;
+  color: red;
+  font-weight: bold;
+  background-color: yellow;
+}
+main {
+  background-image: url(../assets/img/background-pizza.jpg);
+  min-height: calc(100vh - 100px);
+  width: 100%;
+}
+.main_wrapper {
+  /*width: 1200px;*/
+}
+footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+}
+.admin_button {
+  width: auto;
+  padding: 2px;
+}
+.basket_wrapper {
+  background-image:  url(../assets/img/basket_icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: yellow;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  float: left;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.user_nav_bar {
+  height: 50px;
+}
+.item_counter {
+  font-size: 25px;
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: rgba(255, 0, 0, 0.82);
+  height: 25px;
+  width: 25px;
+  padding-bottom: 2px;
+  border-radius: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
